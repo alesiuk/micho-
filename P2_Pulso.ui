@@ -90,7 +90,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>390</x>
      <y>240</y>
      <width>301</width>
      <height>61</height>
@@ -114,8 +114,8 @@
   <widget class="QPushButton" name="P2_Continuar_Pulso">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>580</y>
+     <x>710</x>
+     <y>410</y>
      <width>201</width>
      <height>71</height>
     </rect>
@@ -131,7 +131,7 @@
     <string notr="true">background:white;</string>
    </property>
    <property name="text">
-    <string>Continuar</string>
+    <string>Graficar</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="P2_P_Pulso">
@@ -156,7 +156,7 @@
   <widget class="QLineEdit" name="P2_C_Pulso">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>390</x>
      <y>310</y>
      <width>291</width>
      <height>61</height>
@@ -261,8 +261,8 @@
   <widget class="QLineEdit" name="P2_PHI_Pulso">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>460</y>
+     <x>390</x>
+     <y>450</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -280,10 +280,10 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>390</x>
      <y>390</y>
      <width>301</width>
-     <height>61</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -299,6 +299,49 @@
    </property>
    <property name="text">
     <string>Valor de ξ:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>540</y>
+     <width>301</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white;
+</string>
+   </property>
+   <property name="text">
+    <string>Ganancia Pasante o Maxima:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="P2_G_Pulso">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>590</y>
+     <width>301</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>22</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:white;
+</string>
    </property>
   </widget>
  </widget>

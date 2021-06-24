@@ -66,7 +66,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>10</x>
      <y>160</y>
      <width>301</width>
      <height>61</height>
@@ -90,7 +90,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>320</x>
      <y>160</y>
      <width>301</width>
      <height>61</height>
@@ -114,8 +114,8 @@
   <widget class="QPushButton" name="P2_Continuar_Senoide">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>590</y>
+     <x>690</x>
+     <y>490</y>
      <width>201</width>
      <height>71</height>
     </rect>
@@ -131,13 +131,13 @@
     <string notr="true">background:white;</string>
    </property>
    <property name="text">
-    <string>Continuar</string>
+    <string>Graficar</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="P2_P_Senoide">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>10</x>
      <y>230</y>
      <width>291</width>
      <height>61</height>
@@ -156,7 +156,7 @@
   <widget class="QLineEdit" name="P2_C_Senoide">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>320</x>
      <y>230</y>
      <width>291</width>
      <height>61</height>
@@ -175,9 +175,9 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>10</x>
      <y>440</y>
-     <width>301</width>
+     <width>291</width>
      <height>61</height>
     </rect>
    </property>
@@ -199,9 +199,9 @@
   <widget class="QLineEdit" name="P2_A_Senoide">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>510</y>
-     <width>301</width>
+     <x>10</x>
+     <y>500</y>
+     <width>291</width>
      <height>61</height>
     </rect>
    </property>
@@ -218,9 +218,9 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>10</x>
      <y>300</y>
-     <width>301</width>
+     <width>291</width>
      <height>61</height>
     </rect>
    </property>
@@ -242,8 +242,8 @@
   <widget class="QLineEdit" name="P2_W0_Senoide">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>370</y>
+     <x>10</x>
+     <y>360</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -261,7 +261,7 @@
   <widget class="QLineEdit" name="P2_PHI_Senoide">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>320</x>
      <y>360</y>
      <width>291</width>
      <height>61</height>
@@ -280,7 +280,7 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>320</x>
      <y>290</y>
      <width>301</width>
      <height>61</height>
@@ -304,9 +304,9 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>320</x>
      <y>430</y>
-     <width>361</width>
+     <width>351</width>
      <height>61</height>
     </rect>
    </property>
@@ -328,9 +328,52 @@
   <widget class="QLineEdit" name="P2_F_Senoide">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>320</x>
      <y>500</y>
      <width>301</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>22</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:white;
+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>290</y>
+     <width>291</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white;
+</string>
+   </property>
+   <property name="text">
+    <string>Ganancia Pasante o Maxima:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="P2_G_Senoide">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>360</y>
+     <width>291</width>
      <height>61</height>
     </rect>
    </property>
