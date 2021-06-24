@@ -99,12 +99,20 @@ class P1_Senoide_Screen(QDialog):
         super(P1_Senoide_Screen, self).__init__()
         loadUi("P1_Senoide.ui", self)
         self.Back_P1_Senoide.clicked.connect(self.gotoBack_P1_Senoide)
-        #self.P11_Continuar.clicked.connect(self.gotoP1_Continuar1)
+        self.P1_Continuar_Senoide.clicked.connect(self.gotoP1_Continuar_Senoide)
 
     def gotoBack_P1_Senoide(self):
         Back_P1_Senoide = P1_Screen()
         widget1.addWidget(Back_P1_Senoide)
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+    def gotoP1_Continuar_Senoide(self):
+        P1_Continuar_Senoide = P1_Screen()
+        P1frecuenciaS = self.P1_F_Senoide.text()
+        print(P1frecuenciaS)
+        widget1.addWidget(P1_Continuar_Senoide)
+        widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
 
 class P1_Pulso_Screen(QDialog):
     def __init__(self):
