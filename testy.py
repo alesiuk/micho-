@@ -107,11 +107,12 @@ class P1_Senoide_Screen(QDialog):
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
 
     def gotoP1_Continuar_Senoide(self):
-        P1_Continuar_Senoide = P1_Screen()
-        P1frecuenciaS = self.P1_F_Senoide.text()
-        print(P1frecuenciaS)
-        widget1.addWidget(P1_Continuar_Senoide)
-        widget1.setCurrentIndex(widget1.currentIndex() + 1)
+        P1senoideF = float(self.P1_F_Senoide.text())
+        P1senoideA = float(self.P1_A_Senoide.text())
+        P1senoideP = float(self.P1_P_Senoide.text())
+        P1senoideC = float(self.P1_C_Senoide.text())
+        P1senoideG = float(self.P1_G_Senoide.text())
+
 
 
 class P1_Pulso_Screen(QDialog):
@@ -119,36 +120,59 @@ class P1_Pulso_Screen(QDialog):
         super(P1_Pulso_Screen, self).__init__()
         loadUi("P1_Pulso.ui", self)
         self.Back_P1_Pulso.clicked.connect(self.gotoBack_P1_Pulso)
-        #self.P11_Continuar.clicked.connect(self.gotoP1_Continuar1)
+        self.P1_Continuar_Pulso.clicked.connect(self.gotoP1_Continuar_Pulso)
 
     def gotoBack_P1_Pulso(self):
         Back_P1_Pulso = P1_Screen()
         widget1.addWidget(Back_P1_Pulso)
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
 
+    def gotoP1_Continuar_Pulso(self):
+        P1pulsoA = float(self.P1_A_Pulso.text())
+        P1pulsoP = float(self.P1_P_Pulso.text())
+        P1pulsoC = float(self.P1_C_Pulso.text())
+        P1pulsoG = float(self.P1_G_Pulso.text())
+
 class P2_Senoide_Screen(QDialog):
     def __init__(self):
         super(P2_Senoide_Screen, self).__init__()
         loadUi("P2_Senoide.ui", self)
         self.Back_P2_Senoide.clicked.connect(self.gotoBack_P2_Senoide)
-        #self.P11_Continuar.clicked.connect(self.gotoP1_Continuar1)
+        self.P2_Continuar_Senoide.clicked.connect(self.gotoP2_Continuar_Senoide)
 
     def gotoBack_P2_Senoide(self):
         Back_P2_Senoide = P2_Screen()
         widget1.addWidget(Back_P2_Senoide)
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
 
+    def gotoP2_Continuar_Senoide(self):
+        P2senoideF = float(self.P1_F_Senoide.text())
+        P2senoideA = float(self.P1_A_Senoide.text())
+        P2senoideP = float(self.P1_P_Senoide.text())
+        P2senoideC = float(self.P1_C_Senoide.text())
+        P2senoideG = float(self.P1_G_Senoide.text())
+        P2senoideW0 = float(self.P1_W0_Senoide.text())
+        P2senoidePHI = float(self.P1_PHI_Senoide.text())
+
 class P2_Pulso_Screen(QDialog):
     def __init__(self):
         super(P2_Pulso_Screen, self).__init__()
         loadUi("P2_Pulso.ui", self)
         self.Back_P2_Pulso.clicked.connect(self.gotoBack_P2_Pulso)
-        #self.P11_Continuar.clicked.connect(self.gotoP1_Continuar1)
+        self.P2_Continuar_Pulso.clicked.connect(self.gotoP2_Continuar_Pulso)
 
     def gotoBack_P2_Pulso(self):
         Back_P2_Pulso = P2_Screen()
         widget1.addWidget(Back_P2_Pulso)
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+    def gotoP2_Continuar_Pulso(self):
+        P2pulsoA = float(self.P1_A_Pulso.text())
+        P2pulsoP = float(self.P1_P_Pulso.text())
+        P2pulsoC = float(self.P1_C_Pulso.text())
+        P2pulsoG = float(self.P1_G_Pulso.text())
+        P2pulsoW0 = float(self.P1_W0_Pulso.text())
+        P2pulsoPHI = float(self.P1_PHI_Pulso.text())
 
 
 ############################################################################################
