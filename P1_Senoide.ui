@@ -87,35 +87,11 @@
     <string>Frecuencia en Hertz del polo:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>260</y>
-     <width>301</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:white;
-</string>
-   </property>
-   <property name="text">
-    <string>Frecuencia en Hertz del cero:</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="P1_Continuar_Senoide">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>580</y>
+     <x>380</x>
+     <y>590</y>
      <width>201</width>
      <height>71</height>
     </rect>
@@ -139,25 +115,6 @@
     <rect>
      <x>550</x>
      <y>190</y>
-     <width>291</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>22</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:white;
-</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="P1_C_Senoide">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>330</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -304,8 +261,8 @@
   <widget class="QComboBox" name="P1_Filtro">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>480</y>
+     <x>550</x>
+     <y>350</y>
      <width>301</width>
      <height>51</height>
     </rect>
@@ -337,8 +294,8 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>410</y>
+     <x>550</x>
+     <y>280</y>
      <width>281</width>
      <height>61</height>
     </rect>

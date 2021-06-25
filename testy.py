@@ -73,7 +73,7 @@ class P2_Screen(QDialog):
         if ((self.P2_Input.currentIndex() == 0)):
             P2_Continuar = P2_Senoide_Screen()
         else:
-                P2_Continuar = P2_Pulso_Screen()
+            P2_Continuar = P2_Pulso_Screen()
 
         widget1.addWidget(P2_Continuar)
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
@@ -88,17 +88,291 @@ class RLC_Screen(QDialog):
         super(RLC_Screen, self).__init__()
         loadUi("Circuito_RLC_serie.ui", self)
         self.Back_RLC.clicked.connect(self.gotoBack_RLC)
+        self.RLC_Continuar.clicked.connect(self.gotoRLC_Continuar)
 
     def gotoBack_RLC (self):
         Back_RLC = Menu_Screen()
         widget1.addWidget(Back_RLC)
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
 
+    def gotoRLC_Continuar (self):
+        if(((self.El_Mas.currentIndex())==0)&((self.El_Menos.currentIndex())==0)):
+            RLC_Continuar = G1_Screen()
+            widget1.addWidget(RLC_Continuar)
+            widget1.setCurrentIndex(widget1.currentIndex() + 1)
 
+        if (((self.El_Mas.currentIndex()) == 0) & ((self.El_Menos.currentIndex()) == 1)):
+            RLC_Continuar = G2_Screen()
+            widget1.addWidget(RLC_Continuar)
+            widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+        if (((self.El_Mas.currentIndex()) == 0) & ((self.El_Menos.currentIndex()) == 2)):
+            RLC_Continuar = G3_Screen()
+            widget1.addWidget(RLC_Continuar)
+            widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+        if (((self.El_Mas.currentIndex()) == 1) & ((self.El_Menos.currentIndex()) == 1)):
+            RLC_Continuar = G4_Screen()
+            widget1.addWidget(RLC_Continuar)
+            widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+        if (((self.El_Mas.currentIndex()) == 1) & ((self.El_Menos.currentIndex()) == 2)):
+            RLC_Continuar = G5_Screen()
+            widget1.addWidget(RLC_Continuar)
+            widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+        if (((self.El_Mas.currentIndex()) == 2) & ((self.El_Menos.currentIndex()) == 2)):
+            RLC_Continuar = G6_Screen()
+            widget1.addWidget(RLC_Continuar)
+            widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+############################################################################################
+class G1_Screen(QDialog):
+    def __init__(self):
+        super(G1_Screen, self).__init__()
+        loadUi("Circuito_RLC_serie_2.ui", self)
+        self.Back_RLC_2.clicked.connect(self.gotoBack_RLC_2)
+        self.RLC_Continuar_2.clicked.connect(self.gotoRLC_Continuar_2)
+
+    def gotoBack_RLC_2(self):
+        Back_RLC_2 = RLC_Screen()
+        widget1.addWidget(Back_RLC_2)
+        widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+    def gotoRLC_Continuar_2(self):
+        if (len(self.Res.text()) == 0):
+            Resis = 1.0
+        else:
+            Resis = float(self.Res.text())
+        if (len(self.Ind.text()) == 0):
+            Induc = 1.0
+        else:
+            Induc = float(self.Ind.text())
+        if (len(self.Cap.text()) == 0):
+            Capa = 1.0
+        else:
+            Capa = float(self.Cap.text())
+
+        sys = signal.TransferFunction([Resis*Capa,0], [Induc * Capa, Capa * Resis,1])
+        w, mag, phase = signal.bode(sys)
+        plt.figure()
+
+        plt.semilogx(w, mag)  # Bode magnitude plot
+        plt.figure()
+        plt.title("Diagrama de Amplitud")
+        plt.xlabel("Hz")
+        plt.ylabel(["|H(jw)|"])
+        plt.semilogx(w, phase)  # Bode phase plot
+        plt.show()
+        plt.title("Diagrama de Fase")
+        plt.xlabel("Hz")
+        plt.ylabel(["|_H(jw)"])
+        plt.show()
+
+class G2_Screen(QDialog):
+    def __init__(self):
+        super(G2_Screen, self).__init__()
+        loadUi("Circuito_RLC_serie_2.ui", self)
+        self.Back_RLC_2.clicked.connect(self.gotoBack_RLC_2)
+        self.RLC_Continuar_2.clicked.connect(self.gotoRLC_Continuar_2)
+
+    def gotoBack_RLC_2(self):
+        Back_RLC_2 = RLC_Screen()
+        widget1.addWidget(Back_RLC_2)
+        widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+    def gotoRLC_Continuar_2(self):
+        if (len(self.Res.text()) == 0):
+            Resis = 1.0
+        else:
+            Resis = float(self.Res.text())
+        if (len(self.Ind.text()) == 0):
+            Induc = 1.0
+        else:
+            Induc = float(self.Ind.text())
+        if (len(self.Cap.text()) == 0):
+            Capa = 1.0
+        else:
+            Capa = float(self.Cap.text())
+
+        sys = signal.TransferFunction([1], [Induc * Capa, Capa * Resis,1])
+        w, mag, phase = signal.bode(sys)
+        plt.figure()
+
+        plt.semilogx(w, mag)  # Bode magnitude plot
+        plt.figure()
+        plt.title("Diagrama de Amplitud")
+        plt.xlabel("Hz")
+        plt.ylabel(["|H(jw)|"])
+        plt.semilogx(w, phase)  # Bode phase plot
+        plt.show()
+        plt.title("Diagrama de Fase")
+        plt.xlabel("Hz")
+        plt.ylabel(["|_H(jw)"])
+        plt.show()
+
+
+class G3_Screen(QDialog):
+    def __init__(self):
+        super(G3_Screen, self).__init__()
+        loadUi("Circuito_RLC_serie_2.ui", self)
+        self.Back_RLC_2.clicked.connect(self.gotoBack_RLC_2)
+        self.RLC_Continuar_2.clicked.connect(self.gotoRLC_Continuar_2)
+
+
+    def gotoBack_RLC_2(self):
+        Back_RLC_2 = RLC_Screen()
+        widget1.addWidget(Back_RLC_2)
+        widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+    def gotoRLC_Continuar_2(self):
+
+        sys = signal.TransferFunction([1], [1])
+        w, mag, phase = signal.bode(sys)
+        plt.figure()
+
+        plt.semilogx(w, mag)  # Bode magnitude plot
+        plt.figure()
+        plt.title("Diagrama de Amplitud")
+        plt.xlabel("Hz")
+        plt.ylabel(["|H(jw)|"])
+        plt.semilogx(w, phase)  # Bode phase plot
+        plt.show()
+        plt.title("Diagrama de Fase")
+        plt.xlabel("Hz")
+        plt.ylabel(["|_H(jw)"])
+        plt.show()
+
+class G4_Screen(QDialog):
+    def __init__(self):
+        super(G4_Screen, self).__init__()
+        loadUi("Circuito_RLC_serie_2.ui", self)
+        self.Back_RLC_2.clicked.connect(self.gotoBack_RLC_2)
+        self.RLC_Continuar_2.clicked.connect(self.gotoRLC_Continuar_2)
+
+    def gotoBack_RLC_2(self):
+        Back_RLC_2 = RLC_Screen()
+        widget1.addWidget(Back_RLC_2)
+        widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+    def gotoRLC_Continuar_2(self):
+        if (len(self.Res.text()) == 0):
+            Resis = 1.0
+        else:
+            Resis = float(self.Res.text())
+        if (len(self.Ind.text()) == 0):
+            Induc = 1.0
+        else:
+            Induc = float(self.Ind.text())
+        if (len(self.Cap.text()) == 0):
+            Capa = 1.0
+        else:
+            Capa = float(self.Cap.text())
+
+        sys = signal.TransferFunction([Induc * Capa,0,0], [Induc * Capa, Capa * Resis,1])
+        w, mag, phase = signal.bode(sys)
+        plt.figure()
+
+        plt.semilogx(w, mag)  # Bode magnitude plot
+        plt.figure()
+        plt.title("Diagrama de Amplitud")
+        plt.xlabel("Hz")
+        plt.ylabel(["|H(jw)|"])
+        plt.semilogx(w, phase)  # Bode phase plot
+        plt.show()
+        plt.title("Diagrama de Fase")
+        plt.xlabel("Hz")
+        plt.ylabel(["|_H(jw)"])
+        plt.show()
+
+
+class G5_Screen(QDialog):
+    def __init__(self):
+        super(G5_Screen, self).__init__()
+        loadUi("Circuito_RLC_serie_2.ui", self)
+        self.Back_RLC_2.clicked.connect(self.gotoBack_RLC_2)
+        self.RLC_Continuar_2.clicked.connect(self.gotoRLC_Continuar_2)
+
+    def gotoBack_RLC_2(self):
+        Back_RLC_2 = RLC_Screen()
+        widget1.addWidget(Back_RLC_2)
+        widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+    def gotoRLC_Continuar_2(self):
+        if (len(self.Res.text()) == 0):
+            Resis = 1.0
+        else:
+            Resis = float(self.Res.text())
+        if (len(self.Ind.text()) == 0):
+            Induc = 1.0
+        else:
+            Induc = float(self.Ind.text())
+        if (len(self.Cap.text()) == 0):
+            Capa = 1.0
+        else:
+            Capa = float(self.Cap.text())
+
+        sys = signal.TransferFunction([Induc * Capa,0,1], [Induc * Capa, Capa * Resis,1])
+        w, mag, phase = signal.bode(sys)
+        plt.figure()
+
+        plt.semilogx(w, mag)  # Bode magnitude plot
+        plt.figure()
+        plt.title("Diagrama de Amplitud")
+        plt.xlabel("Hz")
+        plt.ylabel(["|H(jw)|"])
+        plt.semilogx(w, phase)  # Bode phase plot
+        plt.show()
+        plt.title("Diagrama de Fase")
+        plt.xlabel("Hz")
+        plt.ylabel(["|_H(jw)"])
+        plt.show()
+
+
+class G6_Screen(QDialog):
+    def __init__(self):
+        super(G6_Screen, self).__init__()
+        loadUi("Circuito_RLC_serie_2.ui", self)
+        self.Back_RLC.clicked.connect(self.gotoBack_RLC_2)
+        self.RLC_Continuar_2.clicked.connect(self.gotoRLC_Continuar_2)
+
+    def gotoBack_RLC_2(self):
+        Back_RLC = RLC_Screen()
+        widget1.addWidget(Back_RLC)
+        widget1.setCurrentIndex(widget1.currentIndex() + 1)
+
+    def gotoRLC_Continuar_2(self):
+        if (len(self.Res.text()) == 0):
+            Resis = 1.0
+        else:
+            Resis = float(self.Res.text())
+        if (len(self.Ind.text()) == 0):
+            Induc = 1.0
+        else:
+            Induc = float(self.Ind.text())
+        if (len(self.Cap.text()) == 0):
+            Capa = 1.0
+        else:
+            Capa = float(self.Cap.text())
+
+        sys = signal.TransferFunction([1], [Induc * Capa, Capa * Resis,1])
+        w, mag, phase = signal.bode(sys)
+        plt.figure()
+
+        plt.semilogx(w, mag)  # Bode magnitude plot
+        plt.figure()
+        plt.title("Diagrama de Amplitud")
+        plt.xlabel("Hz")
+        plt.ylabel(["|H(jw)|"])
+        plt.semilogx(w, phase)  # Bode phase plot
+        plt.show()
+        plt.title("Diagrama de Fase")
+        plt.xlabel("Hz")
+        plt.ylabel(["|_H(jw)"])
+        plt.show()
 
 ############################################################################################
 ############################################################################################
-
 
 
 class P1_Senoide_Screen(QDialog):
@@ -116,16 +390,24 @@ class P1_Senoide_Screen(QDialog):
 
     def gotoP1_Continuar_Senoide(self):
         P1senoideP = float(self.P1_P_Senoide.text())
-        #P1senoideF = float(self.P1_F_Senoide.text())
-        #P1senoideA = float(self.P1_A_Senoide.text())
-        #P1senoideC = float(self.P1_C_Senoide.text())
+
         if (len(self.P1_G_Senoide.text()) == 0):
             P1senoideG = 1.0
         else:
             P1senoideG = float(self.P1_G_Senoide.text())
 
+        if (len(self.P1_F_Senoide.text()) == 0):
+            P1senoideF = 1.0
+        else:
+            P1senoideF = float(self.P1_F_Senoide.text())
+
+        if (len(self.P1_A_Senoide.text()) == 0):
+            P1senoideA = 1.0
+        else:
+            P1senoideA = float(self.P1_A_Senoide.text())
+
         if((self.P1_Filtro.currentIndex())==0):
-            sys = signal.TransferFunction([P1senoideG], [1/P1senoideP, 1])
+            sys = signal.TransferFunction([(P1senoideG*2*np.pi)], [1 / (P1senoideP*2*np.pi), 1])
             w, mag, phase = signal.bode(sys)
             plt.figure()
 
@@ -136,10 +418,103 @@ class P1_Senoide_Screen(QDialog):
             plt.ylabel(["|H(jw)|"])
             plt.semilogx(w, phase)  # Bode phase plot
             plt.show()
-            #plt.title("Diagrama de Fase")
-            #plt.xlabel("Hz")
-            #plt.ylabel(["|_H(jw)"])
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel(["|_H(jw)"])
             plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            Sin_Response = signal.lsim(sys, U=(np.sin(2*np.pi*P1senoideF*t)*P1senoideA), T=t)
+
+            plt.figure(figsize=(13, 4))
+            plt.plot(Sin_Response[0], Sin_Response[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
+
+
+        if ((self.P1_Filtro.currentIndex()) == 1):
+            sys = signal.TransferFunction([(P1senoideG*2*np.pi)/(P1senoideP*2*np.pi),0], [1 / (2*np.pi*P1senoideP), 1])
+            w, mag, phase = signal.bode(sys)
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel(["|H(jw)|"])
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel(["|_H(jw)"])
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            Sin_Response = signal.lsim(sys, U=(np.sin(2 * np.pi * P1senoideF * t) * P1senoideA), T=t)
+
+            plt.figure(figsize=(13, 4))
+            plt.plot(Sin_Response[0], Sin_Response[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
+        if ((self.P1_Filtro.currentIndex()) == 2):
+            sys = signal.TransferFunction([(-1/(P1senoideP*2*np.pi)),1], [(1/(P1senoideP*2*np.pi)),1])
+            w, mag, phase = signal.bode(sys)
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel(["|H(jw)|"])
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel(["|_H(jw)"])
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            Sin_Response = signal.lsim(sys, U=(np.sin(2 * np.pi * P1senoideF * t) * P1senoideA), T=t)
+
+            plt.figure(figsize=(13, 4))
+            plt.plot(Sin_Response[0], Sin_Response[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
 
 
 
@@ -156,9 +531,8 @@ class P1_Pulso_Screen(QDialog):
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
 
     def gotoP1_Continuar_Pulso(self):
-        #P1pulsoA = float(self.P1_A_Pulso.text())
         P1pulsoP = float(self.P1_P_Pulso.text())
-        #P1pulsoC = float(self.P1_C_Pulso.text())
+
 
         if (len(self.P1_G_Pulso.text())== 0):
             P1pulsoG=1.0
@@ -166,20 +540,105 @@ class P1_Pulso_Screen(QDialog):
             P1pulsoG = float(self.P1_G_Pulso.text())
 
         if((self.P1_Filtro.currentIndex()) == 0):
-            sys = signal.TransferFunction([P1pulsoG], [1/P1pulsoP, 1])
+            sys = signal.TransferFunction([(P1pulsoG*2*np.pi)], [1/(2*np.pi*P1pulsoP), 1])
             w, mag, phase = signal.bode(sys)
-            plt.figure()
-
-            plt.semilogx(w, mag)  # Bode magnitude plot
             plt.figure()
             plt.title("Diagrama de Amplitud")
             plt.xlabel("Hz")
             plt.ylabel(["|H(jw)|"])
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel(["|_H(jw)"])
             plt.semilogx(w, phase)  # Bode phase plot
             plt.show()
-            #plt.title("Diagrama de Fase")
-            #plt.xlabel("Hz")
-            #plt.ylabel(["|_H(jw)"])
+
+            t = np.linspace(0, 20, num=1000)
+            h = signal.step(sys, T=t)
+            plt.figure(figsize=(13, 4))
+            plt.plot(h[0], h[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
+        if ((self.P1_Filtro.currentIndex()) == 1):
+            sys = signal.TransferFunction([(P1pulsoG*2*np.pi)/(2*np.pi*P1pulsoP),0], [1 / (2*np.pi*P1pulsoP), 1])
+            w, mag, phase = signal.bode(sys)
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel(["|H(jw)|"])
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel(["|_H(jw)"])
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            h = signal.step(sys , T=t)
+            plt.figure(figsize=(13, 4))
+            plt.plot(h[0], h[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
+        if ((self.P1_Filtro.currentIndex()) == 2):
+            sys = signal.TransferFunction([(-1/(P1pulsoP*2*np.pi)),1], [(1 / (P1pulsoP*2*np.pi)), 1])
+            w, mag, phase = signal.bode(sys)
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel(["|H(jw)|"])
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel(["|_H(jw)"])
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            h = signal.step(sys, T=t)
+            plt.figure(figsize=(13, 4))
+            plt.plot(h[0], h[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
             plt.show()
 
 
@@ -202,16 +661,18 @@ class P2_Senoide_Screen(QDialog):
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
 
     def gotoP2_Continuar_Senoide(self):
-        #P2senoideF = float(self.P2_F_Senoide.text())
-        #P2senoideA = float(self.P2_A_Senoide.text())
-        if(len(self.P2_P_Senoide.text())==0):
-            P2senoideP = 1
+        if (len(self.P2_W0_Senoide.text()) == 0):
+            P2senoideF = 1
         else:
-            P2senoideP = float(self.P2_P_Senoide.text())
-        #if (len(self.P2_C_Senoide.text()) == 0):
-            #P2senoideC = 1
-        #else:
-            #P2senoideC = float(self.P2_C_Senoide.text())
+            P2senoideF = float(self.P2_F_Senoide.text())
+        if (len(self.P2_W0_Senoide.text()) == 0):
+            P2senoideA = 1
+        else:
+            P2senoideA = float(self.P2_A_Senoide.text())
+        if(len(self.P2_W0_Senoide.text())==0):
+            P2senoideW0 = 1
+        else:
+            P2senoideW0 = (float(self.P2_W0_Senoide.text()) / (2*np.pi))
         if (len(self.P2_G_Senoide.text()) == 0):
             P2senoideG = 1
         else:
@@ -221,20 +682,153 @@ class P2_Senoide_Screen(QDialog):
         else:
             P2senoidePHI = float(self.P2_PHI_Senoide.text())
 
-        sys = signal.TransferFunction([P2senoideG], [(1/P2senoideP)**2,2*(P2senoidePHI/P2senoideP), 1])
-        w, mag, phase = signal.bode(sys)
 
-        plt.figure()
-        plt.title("Diagrama de Amplitud")
-        plt.xlabel("Hz")
-        plt.ylabel("|H(jw)|(dB)")
-        plt.semilogx(w, mag)  # Bode magnitude plot
-        plt.figure()
-        plt.title("Diagrama de Fase")
-        plt.xlabel("Hz")
-        plt.ylabel("|_H(jw)(º)")
-        plt.semilogx(w, phase)  # Bode phase plot
-        plt.show()
+
+        if((self.P2_Filtro.currentIndex()) == 0):
+            sys = signal.TransferFunction([P2senoideG], [(1/P2senoideW0)**2,2*(P2senoidePHI/P2senoideW0), 1])
+            w, mag, phase = signal.bode(sys)
+
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel("|H(jw)|(dB)")
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel("|_H(jw)(º)")
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            Sin_Response = signal.lsim(sys, U=((np.sin(2*np.pi*P2senoideF*t))*P2senoideA), T=t)
+
+            plt.figure(figsize=(13, 4))
+            plt.plot(Sin_Response[0], Sin_Response[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+
+            w, H = signal.freqresp(sys)  #diagrama de Nyquist
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
+        if ((self.P2_Filtro.currentIndex()) == 1):
+            sys = signal.TransferFunction([P2senoideG * ((1 / P2senoideW0) ** 2), 0, 0],
+                                          [(1 / P2senoideW0) ** 2, 2 * (P2senoidePHI / P2senoideW0), 1])
+            w, mag, phase = signal.bode(sys)
+
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel("|H(jw)|(dB)")
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel("|_H(jw)(º)")
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            Sin_Response = signal.lsim(sys, U=((np.sin(2 * np.pi * P2senoideF * t)) * P2senoideA), T=t)
+
+            plt.figure(figsize=(13, 4))
+            plt.plot(Sin_Response[0], Sin_Response[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)  # diagrama de Nyquist
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
+        if ((self.P2_Filtro.currentIndex()) == 3):
+            sys = signal.TransferFunction([0,P2senoideG * 2 * (P2senoidePHI / P2senoideW0), 0],[(1 / P2senoideW0) ** 2, 2 * (P2senoidePHI / P2senoideW0), 1])
+            w, mag, phase = signal.bode(sys)
+
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel("|H(jw)|(dB)")
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel("|_H(jw)(º)")
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            Sin_Response = signal.lsim(sys, U=((np.sin(2 * np.pi * P2senoideF * t)) * P2senoideA), T=t)
+
+            plt.figure(figsize=(13, 4))
+            plt.plot(Sin_Response[0], Sin_Response[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)  # diagrama de Nyquist
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
+        if ((self.P2_Filtro.currentIndex()) == 4):
+            sys = signal.TransferFunction([P2senoideG*((1 / P2senoideW0)**2), 0, 1],[(1 / P2senoideW0) ** 2, 2 * (P2senoidePHI / P2senoideW0), 1])
+            w, mag, phase = signal.bode(sys)
+
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel("|H(jw)|(dB)")
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel("|_H(jw)(º)")
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            Sin_Response = signal.lsim(sys, U=((np.sin(2 * np.pi * P2senoideF * t)) * P2senoideA), T=t)
+
+            plt.figure(figsize=(13, 4))
+            plt.plot(Sin_Response[0], Sin_Response[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)  # diagrama de Nyquist
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
 
 
 
@@ -251,20 +845,167 @@ class P2_Pulso_Screen(QDialog):
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
 
     def gotoP2_Continuar_Pulso(self):
-        P2pulsoA = float(self.P1_A_Pulso.text())
-        P2pulsoP = float(self.P1_P_Pulso.text())
-        P2pulsoC = float(self.P1_C_Pulso.text())
-        P2pulsoG = float(self.P1_G_Pulso.text())
-        P2pulsoW0 = float(self.P1_W0_Pulso.text())
-        P2pulsoPHI = float(self.P1_PHI_Pulso.text())
+        #if (len(self.P2_W0_Pulso.text()) == 0):
+            #P2pulsoA = 1
+        #else:
+            #P2pulsoA = float(self.P1_A_Pulso.text())
+        if (len(self.P2_W0_Pulso.text()) == 0):
+            P2pulsoW0 = 1
+        else:
+            P2pulsoW0 = (float(self.P2_W0_Pulso.text()) / (2 * np.pi))
+        if (len(self.P2_G_Pulso.text()) == 0):
+            P2pulsoG = 1
+        else:
+            P2pulsoG = float(self.P2_G_Pulso.text())
+        if (len(self.P2_PHI_Pulso.text()) == 0):
+            P2pulsoPHI = 1
+        else:
+            P2pulsoPHI = float(self.P2_PHI_Pulso.text())
+
+        if ((self.P2_Filtro.currentIndex()) == 0):
+            sys = signal.TransferFunction([P2pulsoG], [(1 / P2pulsoW0) ** 2, 2 * (P2pulsoPHI / P2pulsoW0), 1])
+            w, mag, phase = signal.bode(sys)
+
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel("|H(jw)|(dB)")
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel("|_H(jw)(º)")
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            h = signal.step(sys, T=t)
+            plt.figure(figsize=(13, 4))
+            plt.plot(h[0], h[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)  # diagrama de Nyquist
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
+        if ((self.P2_Filtro.currentIndex()) == 1):
+            sys = signal.TransferFunction([P2pulsoG*(1/P2pulsoW0),0,0], [(1 / P2pulsoW0) ** 2, 2 * (P2pulsoPHI / P2pulsoW0), 1])
+            w, mag, phase = signal.bode(sys)
+
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel("|H(jw)|(dB)")
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel("|_H(jw)(º)")
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            h = signal.step(sys, T=t )
+            plt.figure(figsize=(13, 4))
+            plt.plot(h[0], h[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)  # diagrama de Nyquist
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
 
 
+
+
+        if ((self.P2_Filtro.currentIndex()) == 3):
+            sys = signal.TransferFunction([0,P2pulsoG * 2 * (P2pulsoPHI / P2pulsoW0), 0],[(1 / P2pulsoW0) ** 2, 2 * (P2pulsoPHI / P2pulsoW0), 1])
+            w, mag, phase = signal.bode(sys)
+
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel("|H(jw)|(dB)")
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel("|_H(jw)(º)")
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            h = signal.step(sys, T=t )
+            plt.figure(figsize=(13, 4))
+            plt.plot(h[0], h[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)  # diagrama de Nyquist
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
+
+        if ((self.P2_Filtro.currentIndex()) == 4):
+            sys = signal.TransferFunction([P2pulsoG*((1 / P2pulsoW0)**2), 0, 1],[(1 / P2pulsoW0) ** 2, 2 * (P2pulsoPHI / P2pulsoW0), 1])
+            w, mag, phase = signal.bode(sys)
+
+            plt.figure()
+            plt.title("Diagrama de Amplitud")
+            plt.xlabel("Hz")
+            plt.ylabel("|H(jw)|(dB)")
+            plt.semilogx(w, mag)  # Bode magnitude plot
+            plt.figure()
+            plt.title("Diagrama de Fase")
+            plt.xlabel("Hz")
+            plt.ylabel("|_H(jw)(º)")
+            plt.semilogx(w, phase)  # Bode phase plot
+            plt.show()
+
+            t = np.linspace(0, 20, num=1000)
+            h = signal.step(sys, T=t)
+            plt.figure(figsize=(13, 4))
+            plt.plot(h[0], h[1])
+            plt.title('Respuesta al escalón con SciPy')
+            plt.xlabel(r't [s]')
+            plt.ylabel(r'Out [V]')
+            plt.grid()
+            plt.subplots_adjust(top=1)
+            plt.show()
+
+            w, H = signal.freqresp(sys)  # diagrama de Nyquist
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            ax1.plot(H.real, H.imag)
+            ax1.plot(H.real, -H.imag)
+            ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
+            ax2.plot(sys.poles.real, sys.poles.imag, 'x')
+            plt.show()
 
 ############################################################################################
-
-
-
-
 
 
 #main
