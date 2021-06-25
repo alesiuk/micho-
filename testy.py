@@ -169,6 +169,7 @@ class G1_Screen(QDialog):
         plt.ylabel(["|_H(jw)"])
         plt.show()
 
+
 class G2_Screen(QDialog):
     def __init__(self):
         super(G2_Screen, self).__init__()
@@ -757,6 +758,8 @@ class P2_Senoide_Screen(QDialog):
             ax2.plot(sys.zeros.real, sys.zeros.imag, 'o')
             ax2.plot(sys.poles.real, sys.poles.imag, 'x')
             plt.show()
+
+        
 
         if ((self.P2_Filtro.currentIndex()) == 3):
             sys = signal.TransferFunction([0,P2senoideG * 2 * (P2senoidePHI / P2senoideW0), 0],[(1 / P2senoideW0) ** 2, 2 * (P2senoidePHI / P2senoideW0), 1])
