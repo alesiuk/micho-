@@ -63,54 +63,11 @@
     <string>&lt;-</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="P2_Filtro">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>360</y>
-     <width>301</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>20</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:white;</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>Pasa Bajos</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Pasa Altos</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Pasa Todo</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Pasa Banda</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Notch</string>
-    </property>
-   </item>
-  </widget>
   <widget class="QComboBox" name="P2_Input">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>360</y>
+     <x>310</x>
+     <y>350</y>
      <width>301</width>
      <height>51</height>
     </rect>
@@ -134,35 +91,11 @@
     </property>
    </item>
   </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>290</y>
-     <width>281</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>18</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:white;
-</string>
-   </property>
-   <property name="text">
-    <string>Seleccionar Filtro:</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>290</y>
+     <x>310</x>
+     <y>280</y>
      <width>281</width>
      <height>61</height>
     </rect>

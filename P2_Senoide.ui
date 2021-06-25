@@ -19,8 +19,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>70</y>
+     <x>270</x>
+     <y>20</y>
      <width>391</width>
      <height>61</height>
     </rect>
@@ -67,7 +67,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>190</y>
+     <y>120</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -90,8 +90,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>190</y>
+     <x>30</x>
+     <y>260</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -114,8 +114,8 @@
   <widget class="QPushButton" name="P2_Continuar_Senoide">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>380</y>
+     <x>710</x>
+     <y>360</y>
      <width>201</width>
      <height>71</height>
     </rect>
@@ -138,7 +138,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>260</y>
+     <y>190</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -156,8 +156,8 @@
   <widget class="QLineEdit" name="P2_C_Senoide">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>260</y>
+     <x>30</x>
+     <y>330</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -176,7 +176,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>470</y>
+     <y>400</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -200,7 +200,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>530</y>
+     <y>460</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -218,8 +218,8 @@
   <widget class="QLineEdit" name="P2_PHI_Senoide">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>390</y>
+     <x>350</x>
+     <y>330</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -237,8 +237,8 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>320</y>
+     <x>350</x>
+     <y>260</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -261,8 +261,8 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>460</y>
+     <x>340</x>
+     <y>120</y>
      <width>351</width>
      <height>61</height>
     </rect>
@@ -285,8 +285,8 @@
   <widget class="QLineEdit" name="P2_F_Senoide">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>530</y>
+     <x>340</x>
+     <y>190</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -305,7 +305,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>320</y>
+     <y>530</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -329,7 +329,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>390</y>
+     <y>600</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -343,6 +343,73 @@
     <string notr="true">background:white;
 </string>
    </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>390</y>
+     <width>281</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white;
+</string>
+   </property>
+   <property name="text">
+    <string>Seleccionar Filtro:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="P2_Filtro">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>460</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:white;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Pasa Bajos</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pasa Altos</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pasa Todo</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pasa Banda</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Notch</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
