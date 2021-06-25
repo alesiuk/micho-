@@ -66,9 +66,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>240</y>
-     <width>301</width>
+     <x>60</x>
+     <y>230</y>
+     <width>341</width>
      <height>61</height>
     </rect>
    </property>
@@ -84,13 +84,13 @@
 </string>
    </property>
    <property name="text">
-    <string>Frecuencia en Hertz del polo:</string>
+    <string>Frecuencia en Hertz de los polos:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>510</x>
      <y>240</y>
      <width>301</width>
      <height>61</height>
@@ -114,8 +114,8 @@
   <widget class="QPushButton" name="P2_Continuar_Pulso">
    <property name="geometry">
     <rect>
-     <x>710</x>
-     <y>410</y>
+     <x>570</x>
+     <y>560</y>
      <width>201</width>
      <height>71</height>
     </rect>
@@ -137,8 +137,8 @@
   <widget class="QLineEdit" name="P2_P_Pulso">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>310</y>
+     <x>60</x>
+     <y>300</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -156,7 +156,7 @@
   <widget class="QLineEdit" name="P2_C_Pulso">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>510</x>
      <y>310</y>
      <width>291</width>
      <height>61</height>
@@ -175,8 +175,8 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>520</y>
+     <x>50</x>
+     <y>370</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -199,52 +199,9 @@
   <widget class="QLineEdit" name="P2_A_Pulso">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>590</y>
+     <x>50</x>
+     <y>440</y>
      <width>301</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>22</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:white;
-</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>380</y>
-     <width>301</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:white;
-</string>
-   </property>
-   <property name="text">
-    <string>ω0 en Hertz:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="P2_W0_Pulso">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>450</y>
-     <width>291</width>
      <height>61</height>
     </rect>
    </property>
@@ -261,7 +218,7 @@
   <widget class="QLineEdit" name="P2_PHI_Pulso">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>510</x>
      <y>450</y>
      <width>291</width>
      <height>61</height>
@@ -280,7 +237,7 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>510</x>
      <y>390</y>
      <width>301</width>
      <height>51</height>
@@ -304,8 +261,8 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>540</y>
+     <x>60</x>
+     <y>520</y>
      <width>301</width>
      <height>41</height>
     </rect>
@@ -328,8 +285,8 @@
   <widget class="QLineEdit" name="P2_G_Pulso">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>590</y>
+     <x>60</x>
+     <y>570</y>
      <width>301</width>
      <height>61</height>
     </rect>

@@ -66,8 +66,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>160</y>
+     <x>30</x>
+     <y>190</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -90,8 +90,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>160</y>
+     <x>370</x>
+     <y>190</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -114,8 +114,8 @@
   <widget class="QPushButton" name="P2_Continuar_Senoide">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>490</y>
+     <x>700</x>
+     <y>380</y>
      <width>201</width>
      <height>71</height>
     </rect>
@@ -137,8 +137,8 @@
   <widget class="QLineEdit" name="P2_P_Senoide">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>230</y>
+     <x>30</x>
+     <y>260</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -156,8 +156,8 @@
   <widget class="QLineEdit" name="P2_C_Senoide">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>230</y>
+     <x>370</x>
+     <y>260</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -175,8 +175,8 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>440</y>
+     <x>30</x>
+     <y>470</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -199,51 +199,8 @@
   <widget class="QLineEdit" name="P2_A_Senoide">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>500</y>
-     <width>291</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>22</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:white;
-</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>300</y>
-     <width>291</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:white;
-</string>
-   </property>
-   <property name="text">
-    <string>ω0 en Hertz:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="P2_W0_Senoide">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>360</y>
+     <x>30</x>
+     <y>530</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -261,8 +218,8 @@
   <widget class="QLineEdit" name="P2_PHI_Senoide">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>360</y>
+     <x>370</x>
+     <y>390</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -280,8 +237,8 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>290</y>
+     <x>370</x>
+     <y>320</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -304,8 +261,8 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>430</y>
+     <x>370</x>
+     <y>460</y>
      <width>351</width>
      <height>61</height>
     </rect>
@@ -328,8 +285,8 @@
   <widget class="QLineEdit" name="P2_F_Senoide">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>500</y>
+     <x>370</x>
+     <y>530</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -347,8 +304,8 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>290</y>
+     <x>30</x>
+     <y>320</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -371,8 +328,8 @@
   <widget class="QLineEdit" name="P2_G_Senoide">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>360</y>
+     <x>30</x>
+     <y>390</y>
      <width>291</width>
      <height>61</height>
     </rect>
