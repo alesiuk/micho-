@@ -19,8 +19,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>140</y>
+     <x>320</x>
+     <y>40</y>
      <width>341</width>
      <height>61</height>
     </rect>
@@ -66,8 +66,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>220</y>
+     <x>550</x>
+     <y>120</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -90,8 +90,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>360</y>
+     <x>550</x>
+     <y>260</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -114,8 +114,8 @@
   <widget class="QPushButton" name="P1_Continuar_Senoide">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>560</y>
+     <x>300</x>
+     <y>580</y>
      <width>201</width>
      <height>71</height>
     </rect>
@@ -137,8 +137,8 @@
   <widget class="QLineEdit" name="P1_P_Senoide">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>290</y>
+     <x>550</x>
+     <y>190</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -156,8 +156,8 @@
   <widget class="QLineEdit" name="P1_C_Senoide">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>430</y>
+     <x>550</x>
+     <y>330</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -175,8 +175,8 @@
   <widget class="QLineEdit" name="P1_F_Senoide">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>290</y>
+     <x>30</x>
+     <y>180</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -194,8 +194,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>220</y>
+     <x>30</x>
+     <y>110</y>
      <width>341</width>
      <height>61</height>
     </rect>
@@ -218,8 +218,8 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>360</y>
+     <x>30</x>
+     <y>250</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -242,8 +242,8 @@
   <widget class="QLineEdit" name="P1_A_Senoide">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>430</y>
+     <x>30</x>
+     <y>320</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -261,8 +261,8 @@
   <widget class="QLineEdit" name="P1_G_Senoide">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>580</y>
+     <x>30</x>
+     <y>470</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -280,8 +280,8 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>510</y>
+     <x>30</x>
+     <y>400</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -299,6 +299,63 @@
    </property>
    <property name="text">
     <string>Ganancia Pasante o Maxima:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="P1_Filtro">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>480</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:white;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Pasa Bajos</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pasa Altos</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pasa Todo</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>410</y>
+     <width>281</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white;
+</string>
+   </property>
+   <property name="text">
+    <string>Seleccionar Filtro:</string>
    </property>
   </widget>
  </widget>
