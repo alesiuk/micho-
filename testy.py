@@ -1,8 +1,19 @@
 import sys
+import numpy as np
+import matplotlib.pyplot as plt
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication, QWidget
 import sqlite3
+from scipy import signal
+import matplotlib.pyplot as plt
+
+from sympy import (
+    init_printing, symbols, arg, I, plot, pi,
+    lambdify, Heaviside, exp
+)
+init_printing()
+
 
 class Menu_Screen (QDialog):
     def __init__(self):
@@ -107,11 +118,20 @@ class P1_Senoide_Screen(QDialog):
         widget1.setCurrentIndex(widget1.currentIndex() + 1)
 
     def gotoP1_Continuar_Senoide(self):
-        P1senoideF = float(self.P1_F_Senoide.text())
-        P1senoideA = float(self.P1_A_Senoide.text())
         P1senoideP = float(self.P1_P_Senoide.text())
-        P1senoideC = float(self.P1_C_Senoide.text())
+        #P1senoideF = float(self.P1_F_Senoide.text())
+        #P1senoideA = float(self.P1_A_Senoide.text())
+        #P1senoideC = float(self.P1_C_Senoide.text())
         P1senoideG = float(self.P1_G_Senoide.text())
+
+        sys = signal.TransferFunction([P1senoideG], [1/P1senoideP, 1])
+        w, mag, phase = signal.bode(sys)
+        plt.figure()
+
+        plt.semilogx(w, mag)  # Bode magnitude plot
+        plt.figure()
+        plt.semilogx(w, phase)  # Bode phase plot
+        plt.show()
 
 
 
@@ -176,6 +196,7 @@ class P2_Pulso_Screen(QDialog):
 
 
 ############################################################################################
+
 
 
 
