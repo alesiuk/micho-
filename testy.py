@@ -265,7 +265,7 @@ class P1_Pulso_PB_Screen(QDialog):
 
 class P1_Pulso_PA_Screen(QDialog):
     def __init__(self):
-        super(P1_Pulso_PB_Screen, self).__init__()
+        super(P1_Pulso_PA_Screen, self).__init__()
         loadUi("P1_Pulso.ui", self)
         self.Back_P1_Pulso.clicked.connect(self.gotoBack_P1_Pulso)
         self.P1_Continuar_Pulso.clicked.connect(self.gotoP1_Continuar_Pulso)
@@ -283,7 +283,7 @@ class P1_Pulso_PA_Screen(QDialog):
 
 class P1_Pulso_PT_Screen(QDialog):
     def __init__(self):
-        super(P1_Pulso_PB_Screen, self).__init__()
+        super(P1_Pulso_PT_Screen, self).__init__()
         loadUi("P1_Pulso.ui", self)
         self.Back_P1_Pulso.clicked.connect(self.gotoBack_P1_Pulso)
         self.P1_Continuar_Pulso.clicked.connect(self.gotoP1_Continuar_Pulso)
