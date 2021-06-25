@@ -8,13 +8,6 @@ import sqlite3
 from scipy import signal
 import matplotlib.pyplot as plt
 
-from sympy import (
-    init_printing, symbols, arg, I, plot, pi,
-    lambdify, Heaviside, exp
-)
-init_printing()
-
-
 class Menu_Screen (QDialog):
     def __init__(self):
         super(Menu_Screen, self).__init__()
@@ -122,15 +115,25 @@ class P1_Senoide_Screen(QDialog):
         #P1senoideF = float(self.P1_F_Senoide.text())
         #P1senoideA = float(self.P1_A_Senoide.text())
         #P1senoideC = float(self.P1_C_Senoide.text())
-        P1senoideG = float(self.P1_G_Senoide.text())
 
+        if (len(self.P1_G_Senoide.text())== 0):
+            P1senoideG=1.0
+        else:
+            P1senoideG = float(self.P1_G_Senoide.text())
         sys = signal.TransferFunction([P1senoideG], [1/P1senoideP, 1])
         w, mag, phase = signal.bode(sys)
         plt.figure()
 
         plt.semilogx(w, mag)  # Bode magnitude plot
         plt.figure()
+        plt.title("Diagrama de Amplitud")
+        plt.xlabel("Hz")
+        plt.ylabel(["|H(jw)|"])
         plt.semilogx(w, phase)  # Bode phase plot
+        plt.show()
+        #plt.title("Diagrama de Fase")
+        #plt.xlabel("Hz")
+        #plt.ylabel(["|_H(jw)"])
         plt.show()
 
 
